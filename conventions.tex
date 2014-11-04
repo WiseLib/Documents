@@ -1,0 +1,88 @@
+\section{Conventions}
+
+To have a clear and understandable code it is necessary to uphold a set of conventions.
+Those conventions are based on Crockord's code conventions\footnote{\url{http://javascript.crockford.com/code.html}} 
+and the Google Javascript Style Guide\footnote{\url{http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml}}.
+
+\subsection{Language rules}
+
+\subsubsection{Variables}
+
+Always declare variables with \lstinline{var} : When you fail to specify var, the variable gets placed in the global context, potentially clobbering existing values.
+
+\subsubsection{Statements}
+
+\begin{itemize}
+  \item Every line should have maximum one simple statement.
+  \item Always use \lstinline{;}.
+\end{itemize}
+
+\subsubsection{Methods and property definitions}
+
+The preferred style for methods is :
+\begin{lstlisting}
+Foo.prototype.bar = function() {
+    /* ... */
+};
+\end{lstlisting}
+
+The preferred style for other properties is to initialize the field in the constructor :
+\begin{lstlisting}
+/** @constructor */
+function Foo() {
+    this.bar = value;
+}
+\end{lstlisting}
+
+\subsubsection{Multiline string literals}
+
+Don't use multiline string literals :
+\begin{lstlisting}
+var myString = 'A rather long string of English text, an error message \
+                actually that just keeps going and going';
+\end{lstlisting}
+
+Use concatenation instead :
+\begin{lstlisting}
+var myString = 'A rather long string of English text, an error message ' +
+    'actually that just keeps going and going';
+\end{lstlisting}
+
+\subsection{Style Rules}
+
+\subsubsection{Naming}
+
+Use camelCase (except for file naming) :
+\begin{itemize}
+	\item \lstinline{functionNamesLikeThis}
+	\item \lstinline{variableNamesLikeThis}
+	\item \lstinline{ClassNamesLikeThis}
+	\item \lstinline{EnumNamesLikeThis}
+	\item \lstinline{methodNamesLikeThis}
+	\item \lstinline{CONSTANT_VALUES_LIKE_THIS}
+	\item \lstinline{foo.namespaceNamesLikeThis.bar}
+	\item \lstinline{filenameslikethis.js}
+\end{itemize}
+
+\subsubsection{Code formatting}
+
+\paragraph{Indentation}
+Indentation is done with 4 spaces. Don't use \lstinline{TAB}.
+
+\paragraph{Curly braces}
+Always start your curly braces on the same line as what they're opening :
+\begin{lstlisting}
+if (something) {
+    // ...
+} else {
+    // ...
+}
+\end{lstlisting}
+
+\paragraph{Spaces}
+Don't put spaces between left and right parenthesis or between brackets :
+\begin{lstlisting}
+var arr = [1, 2, 3];  // No space after [ or before ].
+\end{lstlisting}
+
+Always put a space after a \lstinline{,}.

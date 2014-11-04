@@ -1,0 +1,97 @@
+\section{Software Quality Assurance Plan}
+\label{sec:SQAP}
+\subsection{Doel}
+
+Dit document behandeld de processen en methodes die gebruikt worden in de quality assurance van het project "WiseLib". Dit document volgt de IEEE standaarden voor Quality Assurance Plannen.
+\footnote{\url{http://users.csc.calpoly.edu/~jdalbey/205/Resources/IEEE7301989.pdf}}
+
+
+\subsection{Referentiedocumenten}
+
+\begin{description}
+\item [SCMP] Software Configuration Mangment Plan
+\end{description}
+
+\subsection{Management}
+
+\subsubsection{Organisatie}
+
+De Quality Assurance wordt beheerd door Yannick Verschueren en Arno Moonens. Hierbij speelt Yannick de hoofdrol en zal Arno slechts invallen in geval van nood. De Quality Assurance Manager heeft als verantwoordelijkheid dat de gevraagde functionaliteiten van het project correct werken, en dat de geproduceerde code geen bugs meer bevat. Aangezien software ontwikkeling verdeeld wordt over het gehele team zal er dus grote afhankelijkheid zijn tussen de QA manager en de verige teamleden.
+
+\subsubsection{Taken}
+
+Hoewel het Quality Assurance proces gedurende het hele project loopt, zal er na de voltooiing van een functionaliteit een periode verhoogde activiteit volgen. Tijdens deze periode wordt er nagegaan of de functionaliteit op een correcte manier functioneert.
+Tussen deze verschillende periode zal er uiteraard ook gewerkt aan bugs en algemeene correctheid van de code.
+
+\subsubsection{Verantwoordelijkheden}
+
+Aangezien het QA team uit één persoon bestaat, is de manager verantwoordelijk voor alle taken die kwaliteit verzekeren.
+
+\begin{comment}
+\subsection{Documentatie}
+
+Niet van toepassing
+
+\end{comment}
+
+\subsection{Standaarden, gebruiken, conventies en metrieken}
+
+\subsubsection {Standaarden}
+
+\paragraph {Documentstandaarden} ~\\
+De documenten gebruiken de IEEE standaarden  \footnote{\url{http://www.ieee.org/publications_standards/publications_standards_index.html}}
+\begin{comment}
+
+\paragraph{Codering standaarden}
+
+In ontwikkeling.
+
+\paragraph{Commentaar standaarden}
+
+In ontwikkeling.
+
+\end{comment}
+
+\subsubsection{Gebruiken}
+
+Naast het testen van de applicatie door algemeen gebruik, zal het testing framework (zie 9) gebruikt worden om correctheid van functionaliteiten te garanderen doorheen de verschillende iteraties van de applicatie. 
+
+\subsection{Audits}
+
+Aangezien het hele team aan de implementering van het systeem is elke vergadering waarin geschreven code wordt besproken een zowel functionele, fysieke als in-process audit.
+
+\begin{comment}
+
+\subsection{Test}
+Niet van toepassing (SVVP (Software Verification an Validation Plan) niet vereist)
+
+\end{comment}
+
+\subsection{Probleem rappotrering}
+Het rapporteren van problemen in zowel software als software ontwikkelings processen worden op verschillende manieren gerapporteerd.
+\begin{description}
+\item[Slack] het gebruikte communicatie platform bevat een "bugs" kanaal waarin problemen en bugs worden gepost.
+\item[GitHub] heeft een ingebouwde issue-tracker.
+\item[Trello] wordt gebruikt om grotere problemen te melden die de voortgang van de implementatie zouden kunnen hinderen.
+
+\end{description}
+
+\subsection{Tools, technieken en methodologieën}
+
+Het QA proces gebruikt Mocha \footnote{\href{https://github.com/mochajs}{Mocha Homepage}} als testing-framework. Dit framework zal in combinatie met Chai\footnote{http://chaijs.com} zorgen voor taalprimitieven in JavaScript die het mogelijk maken om behaviour-driven tests neer te schrijven en uit te voeren. Er zijn drie verschillende interfaces voor Chai, maar wij beperken ons in dit project tot \textit{Should}\footnote{http://chaijs.com/guide/styles/#should} beperkt.
+
+\begin{comment}
+
+\subsection{Code Beheer}
+
+Deel van het SCMP (Software Configuration Managment Plan).
+
+\subsection{Media Beheer}
+
+Deel van het SCMP
+
+\subsection{Leverancier beheer}
+
+Niet van toepassing. Software wordt nagekeken door de opdrachtgevers (professoren).
+
+\end{comment}
