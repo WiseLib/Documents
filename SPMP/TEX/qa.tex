@@ -2,96 +2,110 @@
 \label{sec:SQAP}
 \subsection{Doel}
 
-Dit document behandeld de processen en methodes die gebruikt worden in de quality assurance van het project "WiseLib". Dit document volgt de IEEE standaarden voor Quality Assurance Plannen.
+Dit document behandelt de processen en methodes die gebruikt worden tijdens de quality assurance van het project "WiseLib". Dit document volgt de IEEE standaarden voor Quality Assurance Plannen.
 \footnote{\url{http://users.csc.calpoly.edu/~jdalbey/205/Resources/IEEE7301989.pdf}}
 
 
 \subsection{Referentiedocumenten}
 
 \begin{description}
-\item [SCMP] Software Configuration Mangment Plan
+\item [SCMP] Software Configuration Managment Plan
 \end{description}
 
 \subsection{Management}
 
 \subsubsection{Organisatie}
 
-De Quality Assurance wordt beheerd door Yannick Verschueren en Arno Moonens. Hierbij speelt Yannick de hoofdrol en zal Arno slechts invallen in geval van nood. De Quality Assurance Manager heeft als verantwoordelijkheid dat de gevraagde functionaliteiten van het project correct werken, en dat de geproduceerde code geen bugs meer bevat. Aangezien software ontwikkeling verdeeld wordt over het gehele team zal er dus grote afhankelijkheid zijn tussen de QA manager en de verige teamleden.
+De Quality Assurance wordt verzorgd door Yannick Verschueren, tevens de Test Manager, en Arno Moonens. Hierbij speelt Yannick de hoofdrol en zal Arno slechts invallen in geval van nood. De Quality Assurance Manager heeft als verantwoordelijkheid dat de gevraagde functionaliteiten van het project correct werken, en dat de geproduceerde code geen bugs meer bevat. Aangezien software-ontwikkeling verdeeld wordt over het gehele team zal er dus grote afhankelijkheid zijn tussen de QA manager en de overige teamleden.
 
 \subsubsection{Taken}
 
-Hoewel het Quality Assurance proces gedurende het hele project loopt, zal er na de voltooiing van een functionaliteit een periode verhoogde activiteit volgen. Tijdens deze periode wordt er nagegaan of de functionaliteit op een correcte manier functioneert.
-Tussen deze verschillende periode zal er uiteraard ook gewerkt aan bugs en algemeene correctheid van de code.
+Hoewel het Quality Assurance proces gedurende het hele project actief is, zal er na de voltooiing van een functionaliteit een periode van verhoogde activiteit volgen. Tijdens deze periode wordt er nagegaan of de functionaliteit op een correcte manier functioneert.
+Tussen deze verschillende periode zal er uiteraard ook gewerkt aan bugs en algemene correctheid van de code.
 
 \subsubsection{Verantwoordelijkheden}
 
 Aangezien het QA team uit één persoon bestaat, is de manager verantwoordelijk voor alle taken die kwaliteit verzekeren.
 
-\begin{comment}
-\subsection{Documentatie}
+De manager heeft verschillende verantwoordelijkheden en komen allemaal terug op de concrete taken die het QA proces definiëren.
 
-Niet van toepassing
+\begin{itemize}
 
-\end{comment}
+\item Het bedenken en oprichten van de quality assurance procedures , standaarden en specificaties.
+
+\item Het herzien van de vereisten van de klant en voor zorgen dat deze na gegaan worden.
+
+\item Samenwerken met productie team om kwaliteits vereisten op te stellen.
+
+\item Standaarden voor kwaliteit opzetten.
+
+\item Er voor zorgen dat standaarden worden nagegaan.
+
+\item Documentatie procedures opvolgen.
+\end{itemize}
+
+\subsection{Documentatie vereisten}
+
+De documenten beschreven in de Project Deliverables volgen de IEEE standaarden en zijn geschreven in correct algemeen Nederlands. De documenten worden aangemaakt met behulp van Latex \footnote{\url{http://www.latex-project.org/}}
+
+
 
 \subsection{Standaarden, gebruiken, conventies en metrieken}
 
 \subsubsection {Standaarden}
 
-\paragraph {Documentstandaarden} ~\\
+\paragraph {Documentstandaarden}
 De documenten gebruiken de IEEE standaarden  \footnote{\url{http://www.ieee.org/publications_standards/publications_standards_index.html}}
-\begin{comment}
 
 \paragraph{Codering standaarden}
 
-In ontwikkeling.
+Codering standaarden en conventies zijn gebaseerd op Crockords code conventions en de Google Javascript Style Guide.Deze conventies worden verder besproken in deel vijf van het Software Design Document.
 
 \paragraph{Commentaar standaarden}
 
-In ontwikkeling.
-
-\end{comment}
+Tijdens het schrijven van code zal gebruik gemaakt worden van JSDoc \footnote{\url{http://usejsdoc.org/}}, om code te documenteren. Dit is een van de niet-functionele vereisten van het project en werd opgelegd door de klant.
 
 \subsubsection{Gebruiken}
 
-Naast het testen van de applicatie door algemeen gebruik, zal het testing framework (zie 9) gebruikt worden om correctheid van functionaliteiten te garanderen doorheen de verschillende iteraties van de applicatie. 
+Naast het testen van de applicatie door algemeen gebruik, zal het testing-framework (zie 9) gebruikt worden om correctheid van de geimplementeerde functionaliteiten te garanderen doorheen de verschillende iteraties van de applicatie. 
 
-\subsection{Audits}
+%\subsection{Audits}
+% Niet nodig blijkbaar
 
-Aangezien het hele team aan de implementering van het systeem is elke vergadering waarin geschreven code wordt besproken een zowel functionele, fysieke als in-process audit.
-
-\begin{comment}
 
 \subsection{Test}
 Niet van toepassing (SVVP (Software Verification an Validation Plan) niet vereist)
 
-\end{comment}
 
-\subsection{Probleem rappotrering}
-Het rapporteren van problemen in zowel software als software ontwikkelings processen worden op verschillende manieren gerapporteerd.
+\subsection{Probleem rappotering}
+
+De teamleden kunnen problemen in zowel de software alsook in software-ontwikkelingsprocessen op verschillende manieren rapporteren.
 \begin{description}
-\item[Slack] het gebruikte communicatie platform bevat een "bugs" kanaal waarin problemen en bugs worden gepost.
-\item[GitHub] heeft een ingebouwde issue-tracker.
-\item[Trello] wordt gebruikt om grotere problemen te melden die de voortgang van de implementatie zouden kunnen hinderen.
-
+\item[GitHub] heeft een geïntegreerde issue-tracker. Dit maakt het onder meer mogelijk om naar bepaalde wijzigingen te refereren in het issue zelf, of omgekeerd om issues te sluiten bij het doorsturen van een wijziging.
+\item[Slack] bevat een "bugs" kanaal waarin alle fouten van het systeem in detail kunnen besproken worden.
+\item[Teamwork] bevat alle officiële rapporten met statistieken over de problemen.
 \end{description}
 
 \subsection{Tools, technieken en methodologieën}
 
-Het QA proces gebruikt Mocha \footnote{\href{https://github.com/mochajs}{Mocha Homepage}} als testing-framework. Dit framework zal in combinatie met Chai\footnote{http://chaijs.com} zorgen voor taalprimitieven in JavaScript die het mogelijk maken om behaviour-driven tests neer te schrijven en uit te voeren. Er zijn drie verschillende interfaces voor Chai, maar wij beperken ons in dit project tot \textit{Should}\footnote{http://chaijs.com/guide/styles/#should} beperkt.
+Het QA proces gebruikt Mocha \footnote{\url{https://github.com/mochajs}} als testing-framework. Dit framework zal in combinatie met Chai\footnote{http://chaijs.com} zorgen voor taalprimitieven in JavaScript die het mogelijk maken om behaviour-driven tests neer te schrijven en uit te voeren. Er zijn drie verschillende interfaces voor Chai, maar wij beperken ons in dit project tot Should\footnote{http://chaijs.com/guide/styles/\#should}.\newline
 
-\begin{comment}
+Het gebruik van het framework wordt in het Software Test Document uitgebreider uitgelegd.
+
+
+\subsubsection{Methodologie}
+
+Tijdens de implementatie van de applicatie wordt gebruik gemaakt van het Agile ontwikkelingsmodel. Dit is een test-driven ontwikkelingsmodel, dit betekent dat unit tests worden geimplementeerd voordat code wordt geschreven. Deze unit tests falen in het begin maar zullen naarmate het project vordert de geschreven code testen. Uiteraard worden ook de testen onderhouden en zullen zij mee evolueren met het verloop van het project.
+
 
 \subsection{Code Beheer}
 
-Deel van het SCMP (Software Configuration Managment Plan).
+Deze specificatie vormt deel van het SCMP (Software Configuration Managment Plan).
 
 \subsection{Media Beheer}
 
-Deel van het SCMP
+Deze specificatie vormt deel van het SCMP.
 
 \subsection{Leverancier beheer}
 
-Niet van toepassing. Software wordt nagekeken door de opdrachtgevers (professoren).
-
-\end{comment}
+Niet van toepassing. Software wordt nagekeken door de opdrachtgevers.

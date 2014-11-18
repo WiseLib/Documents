@@ -1,26 +1,28 @@
 \section {Management proces} 
 
-\subsection{Werkplanning}
-
 \subsection{Controle plan}
 \subsubsection{Requirements controle}
-Om een overzicht te houden op alle requirements zal er op de site \cite{Website} een requirements dashboard worden opgezet. Deze tabel zal de requirements bijhouden en hun status per iteratie weergeven. Voor elke requirement zullen de belangrijkste statistieken (prioriteit, moeilijkheidsgraad, ...) terug te vinden zijn.
+Om een overzicht te houden van alle requirements zal er op de site \cite{Website} een requirements dashboard worden opgezet. Deze tabel zal de requirements bijhouden en hun prioriteit. Als een requirement is afgewerkt, wordt de requirement doorstreept in de tabel. Mogelijke aanpassing van de requirements worden tussen de requirements manager en de cliënt besproken. Als er een requirement moet veranderen, dan moet de requirements manager dit als punt op de agenda zetten voor de volgende vergadering en past hij het SRS aan.
 
 \subsubsection{Planning controle}
 
+Er zijn algemene milestones en deadlines die tijdens de vergaderingen worden afgesproken. Iedereen is verantwoordelijk voor zijn eigen deadlines. Op elke vergadering vraagt de project manager aan iedereen de stand van zaken. Als er iemand zijn deadline niet kan halen, dan zal er besproken worden of er iemand anders mee kan helpen of dat de deadline kan opgeschoven worden. Mist iemand zijn deadline zonder geldige reden, dan zal de project manager die persoon daar over aanspreken en zal hij het vermelden op de volgende vergadering. De planning wordt met Teamwork \cite{Teamwork} beheerd. 
+
+\begin{comment}
 Voor de planning maken we gebruik van Teamwork \cite{Teamwork}. Het laat toe om milestones en deadlines vast te leggen voor het hele team. Bovendien is het ook mogelijk voor een enkel teamlid om zichzelf persoonlijke milestones en deadlines geven. Deze gegevens kunnen dan doorgestuurd worden met behulp van een iCal-feed naar de  agenda van dat teamlid. 
+\end{comment}
 
-\subsubsection{Raportering}
-
+\subsubsection{Rapportering} 
+\paragraph{Documenten en code} 
 Op het einde van elke iteratie worden documenten, source code en (eventueel) andere artefacten opgeleverd.
-Afspraken in verband met deze opleveringen (waarbij N de groepsnummer voorstelt): 
+Afspraken in verband met deze opleveringen: 
 
 \begin{itemize}
 \item Alle documenten en source code (inclusief unit tests) worden per mail afgeleverd als een
-enkele zipfile, met als naam seN-iterM, waarbij M het nummer van de iteratie is (voor
+enkele zipfile, met als naam se2-iterM, waarbij M het nummer van de iteratie is (voor
 eerste versie van documenten geldt M = 0). De aanlevering gebeurt ten laatste voor 9u00 ’s
-ochtends op de dag van de deadline\footnote{Zie de kalender \href{tab:kalender})}.
-\item Alle documenten en source code worden worden overeenkomstig getagd/gebranchd (seN-iterM)
+ochtends op de dag van de deadline.
+\item Alle documenten en source code worden worden overeenkomstig getagd/gebranchd (se2-iterM)
 in de repository.
 \item Andere artefacten (zoals executables) worden apart aangeleverd (direct, of via een link, in de
 opleveringsmail) en vermelden duidelijk de overeenkomstige iteratie in de bestandsnaam.
@@ -28,6 +30,7 @@ opleveringsmail) en vermelden duidelijk de overeenkomstige iteratie in de bestan
 wordt.
 \end{itemize}
 
+\paragraph{Presentatie}
 Een presentatie duurt een half uur per groep en wordt ingevuld door een aantal sprekers, met 2 sprekers
 per groep. Alle groepsleden moeten minimum een keer presenteren. De volgende zaken worden
 besproken of gedemonstreerd:
@@ -45,6 +48,7 @@ dashboard, en toon een testrapport (aantal tests, aantal succesvol)
 
 \subsection{Risico Management Plan}
 
+\begin{comment}
 \subsubsection{Persoonlijk risico's}
 Het persoonlijke risico zijn de goede en slechte eigenschappen van elk teamlid. Door deze te kennen, kunnen de taken beter verdeeld worden en kan iedereen op de juiste manier gestimuleerd worden. De analyse is terug te vinden in onderstaande tabel. 
 \begin{longtable}{l}
@@ -105,19 +109,76 @@ Het persoonlijke risico zijn de goede en slechte eigenschappen van elk teamlid. 
 \end{longtable}
 
 \subsubsection{Project risico's}
+\end{comment}
 
-Aan elk risico wordt een waarde meegegeven dat de kans weergeeft dat het probleem zich gaat voordoen tijdens het project en er wordt ook een waarde meegegeven aan de impact die het probleem gaat hebben op het project. De waarden die deze parameters kunnen aannemen liggen tussen één en negen.
+\subsubsection{Eén van de teamleden is ziek of verlaat het team}
+\begin{itemize}
+\item Kans: 4
+\item Impact: 6
+\item Prioriteit: 7
+\item Oplossing: De Back-up neemt de positie van het teamlid over
+\item Verantwoordelijkheid: Project Manager
+\end{itemize}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{l|c|c|l}
-Risico & Kans & Impact & Oplossing  \\
-\hline
- Meningsverschillen & 9 & 4 & Bemiddeling of stemming \\
- Database model staat functies systeem niet toe & 4 & 7 & Database model veranderen \\
- Bugs & 9 & 5 & Verantwoordelijke aanduiden
-\end{tabular}
-\caption{Project Risico's}
-\label{tab:projris}
-\end{table}
+\subsubsection{Slechte communicatie binnen de groep}
+\begin{itemize}
+\item Kans: 6
+\item Impact: 5
+\item Prioriteit: 7
+\item Oplossing: Er worden algemene afspraken gemaakt over de communicatie
+\item Verantwoordelijkheid: Project Manager
+\end{itemize}
 
+\subsubsection{Een deadline wordt gemist}
+\begin{itemize}
+\item Kans: 2
+\item Impact: 9
+\item Prioriteit: 7
+\item Oplossing: Alle voortgang wordt op github geplaatst, elk teamlid geeft elke week zijn status op de vergadering
+\item Verantwoordelijkheid: Project Manager
+\end{itemize}
+
+\subsubsection{Miscommunicatie tussen de cliënt en het team}
+\begin{itemize}
+\item Kans: 2
+\item Impact: 7
+\item Prioriteit: 7
+\item Oplossing: De requirements manager houdt contact met de cliënt en bespreekt onduidelijkheden met de cliënt
+\item Verantwoordelijkheid: Requirements Manager
+\end{itemize}
+
+\subsubsection{Plotselinge verandering in de requirements}
+\begin{itemize}
+\item Kans: 2
+\item Impact: 5
+\item Prioriteit: 5
+\item Oplossing: Proberen de requirement in de bestaande code toe te voegen
+\item Verantwoordelijkheid: Requirements Manager
+\end{itemize}
+
+\subsubsection{Server is tijdelijk offline}
+\begin{itemize}
+\item Kans: 1
+\item Impact: 8
+\item Prioriteit: 8
+\item Oplossing: Een mirror server opzetten
+\item Verantwoordelijkheid: Configuration Manager
+\end{itemize}
+
+\subsubsection{Onenigheid tussen de teamleden}
+\begin{itemize}
+\item Kans: 4
+\item Impact: 6
+\item Prioriteit: 8
+\item Oplossing: Bemiddelen tussen de verschillende leden 
+\item Verantwoordelijkheid: Project Manager
+\end{itemize}
+
+\subsubsection{Database model staat de functies van het systeem niet toe}
+\begin{itemize}
+\item Kans: 4
+\item Impact: 7
+\item Prioriteit: 8
+\item Oplossing: Het database model veranderen
+\item Verantwoordelijkheid: Database Manager
+\end{itemize}

@@ -1,0 +1,114 @@
+
+% Gebaseerd op IEEE Std 828-2005
+
+\section{Software Configuration Management Plan}
+
+Onder de term "Software Configuration Management" verstaan we alle ondersteunende tools en processen die het makkelijker maken om wijzigingen aan de software aan te brengen en bij te houden. \\
+
+Dit document legt verder het beheer van de software configuration vast in dit project, alsook de rol van de Configuration Manager.
+
+\subsection{SCM-beheer}
+
+Sam Vervaeck is de hoofdverantwoordelijke van de Software Configuration Management. In het geval dat hij zijn rol niet kan vervullen zal Wout Van Riel zijn taken overnemen. \\
+
+De software die uiteindelijk naar de klant geleverd wordt, moet uitvoerbaar zijn op Wilma, een server die door de klant zelf wordt beheerd. De onderstaande tabel geeft welke software in deze omgeving beschikbaar is. \\
+
+\begin{tabular}{r|l}
+Slackware & 14.1 \\
+Node.js & 0.10.28 \\
+npm & 1.4.9
+\end{tabular}
+
+\subsection{SCM-activiteiten}
+
+\subsubsection{Configuration-items}
+
+Het onderstaand stuk bevat een lijst van configuration-items (ofwel "CI's") die in dit project aan bod komen.
+
+\textb{Presentatie-site}
+
+Deze mini-website bevat alle informatie betreffende de ontwikkeling van het project. De klant kan op ieder gewenst moment deze website raadplegen om de huidige staat van het project in te zien.
+
+De website probeert zoveel mogelijk informatie te "aggregeren"  vanuit de ontwikkelingstools. Ontbrekende informatie moet handmatig worden aangevuld.
+\begin{itemize}
+\item Een dashboard dat de voortgang van de requirements van het project weergeeft
+\item Een lijst van teamleden met hun functie
+\item De documenten en rapporten die moeten worden opgeleverd
+\item Een wegwijzer voor tools die ook consulteerbaar zijn voor de klant, zoals GitHub
+\end{itemize}
+
+Voor de implementatie en het onderhoud van de website zijn zowel de Configuration Manager als de Design Manager verantwoordelijk. Van ieder teamlid wordt echter verwacht dat hij de website controleert en updatet indien nodig. De uiteindelijke verantwoordelijkheid ligt hiervoor bij de projectmanager.
+
+De website is handgeschreven. De laatste versie van de website bevindt zich telkens op GitHub en zal automatisch worden gedeployed naar de 
+
+\textb{Documenten en rapporten}
+
+Alle documenten worden onder versiebeheer bijgehouden op GitHub. Het is de teamleden toegestaan om ShareLaTeX te gebruiken, aangezien deze tool voor iedereen beschikbaar is en makkelijker is om mee te werken. De configuration manager is dan verantwoordelijk voor de synchronisatie tussen ShareLaTeX en GitHub. Het is hem vrij of hij dit manueel doet, of hij hiervoor een automatisatie-script gebruikt.
+
+\textb{Server-configuratie}
+
+De standaardinstellingen van de server zullen in een apart CI opgenomen worden, onder de naam \textit{dotfiles}. Tot deze CI behoren alle globale configuratiebestanden voor de applicatie zelf en voor ondersteunende software op de server zoals Vim\footnote{\url{http://www.vim.org}}. In latere fasen kan dit artefact eventueel uitgebreid worden om configuratie-files te bevatten voor specifieke services. In dat geval zal dit artefact hernoemd worden naar \textit{server-config}.
+
+\textb{Applicatie}
+
+De applicatie zelf wordt in twee grote stukken onderverdeeld: een \textit{server} en een \textit{client}. Het SSD gaat dieper in op de architectuur van beide delen. De twee CI's zullen wel duidelijk van elkaar te onderscheiden zijn. Ontwikkeling aan de client en de server kan bijgevolg los van elkaar gebeuren.
+
+\subsection{SCM-hulpmiddelen}
+
+Ieder teamlid is vrij om zijn eigen editor en besturingssyteem te gebruiken, maar er wordt wel verondersteld dat er een minimale shell-omgeving beschikbaar is. Concreet moet alle software op zijn minst kunnen draaien op de laatste versies van Windows, Mac OS X en Ubuntu LTS.
+
+\begin{tabular}{l|l|}
+Applicatienaam & Versienummer & Omschrijving \\
+GulpJS & 3.8.10 & Automatisatie van taken  \\
+Git & 1.9.3 & Versiebeheersysteem \\
+Travis CI & 2014-11-13.17-08 & Tests uitvoeren en deployment \\
+\end{tabular}
+
+\subsubsection{Controle van de configuratie}
+
+Om het ontwikkelingsproces zo vlot mogelijk te laten verlopen krijgt ieder teamlid vrije toegang tot de repositories. Er wordt wel verondersteld dat de configuration manager alle wijzigingen nauw opvolgt, zodat hij makkelijk een foute toepassing van een tool of proces kan corrigeren.
+
+Het branching model van elke CI volgt in grote lijnen Git-flow\footnote{http://nvie.com/posts/a-successful-git-branching-model/} en zijn extensie GitHub-flow\footnote{http://scottchacon.com/2011/08/31/github-flow.html}. Voor elke nieuwe functionele requirement of bugfix wordt een nieuwe branch gemaakt. Er gelden enkele regels voor de naamgeving van de branch:
+
+\begin{itemize}
+\item enkel kleine letters en cijfers
+\item streepjes ("-") als scheidingsteken
+\item prefix alle features met \textit{req-}
+\item prefix alle bugfixes met \textit{fix-}
+\item een korte maar goede beschrijving zodat de logs duidelijk zijn
+\end{itemize}
+
+Teamleden mogen hun lokale history \textb{rebasen} om overbodige merges te vermijden. Dit is geen verplichting en wordt enkel aangeraden aan personen die vertrouwd zijn met het concept van rebasing.
+
+Indien twee of meerdere teamleden met eenzelfde bug of feature bezig zijn, moeten ze hun branchnaam prefixen met \textit{gebruikersnaam-}. Bij een conflict heeft de Test Manager het laatste woord over welke versie teruggaat naar de hoofdbranch.
+
+Er is geen aparte productie-branch op de ser
+
+\subsubsection{Beheer van uitgaven en opleveringen}
+
+Elke CI wordt gekenmerkt door een eigen tempo in het ontiwkkelproces. Om die reden verschilt het release/deployment-proces van iedere tool lichtjes.
+
+Voor de applicatie is het nodig dat de productieversie van zowel de client als de server grondig getest is geweest en geen fouten bevat. Om die reden zal de Test Manager handmatig aanduiden welke versies gereleased kunnen worden. Deze releases worden dan automatisch gedeployed.
+
+De Configuration Manager haalt na iedere iteratie de documenten rechtstreeks van ShareLaTeX en plaatst ze in het versiebeheersysteem. Na elke wijziging wordt er dus automatisch een nieuwe release gemaakt. De releases bevatten de documenten in PDF-vorm, zodat deze automatisch kunnen worden gedeployed naar de presentatie-website.
+
+De presentatie-website is minder complex. Bovendien is het minder belangrijk dat de website volledig foutloos is, maar is het wel belangrijk dat snelle updates mogelijk zijn. Daarom wordt voor de presentatie-website de release-fase overgeslagen en rechtstreeks gedeployed vanuit de meest recente versie.
+
+Onsderstaande tabel vat deze configuratie samen.
+
+\begin{tabular}{l|l|l}
+CI & Release & Deployment \\
+Server & na goedkeuring & bij nieuwe release \\
+Client & na goedkeuring & bij nieuwe release \\
+Documenten & nieuwe wijziging op de hoofdbranch & bij nieuwe release \\
+Presentatie-site & n.v.t. & Bij nieuwe wijziging \\
+Serverconfiguratie & n.v.t. & n.v.t. 
+\end{tabular}
+
+\subsection{Onderhoud van het SCM-plan}
+
+De Configuration Manager is verplicht om aanpassingen in het beheer van de software configuratie grondig bij te houden. Hij dient bij het begin van elke iteratie dit plan grondig te herzien en aan de passen aan de verwachtingen van die (en volgende) iteraties.
+
+Aangezien net zoals de software zelf het ook goed mogelijk is dat de ondersteunende tools of processen in de toekomst moeten veranderen, is het altijd mogelijk om wijzigingen aan dit Configuration Management Plan aan te brengen. De enige vereiste is dat het hele team hiermee akkoord gaat nadat de Configuration Manager de wijzigingen heeft voorgelegd. \\
+
+Iedereen van het team heeft ook altijd de mogelijkheid om wijzigingen aan het Configuration Management plan voor te stellen. In dat geval geldt voor dat teamlid dezelfde regels als voor de Configuration Manager.

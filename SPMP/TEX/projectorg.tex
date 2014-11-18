@@ -1,12 +1,10 @@
 \section{Project organisatie}
 
 \subsection{Externe Interfaces}
-Het project is opgedragen door de VUB in het kader van de lessen ``Software Engineering". De cliënten zijn Ragnhild Van Der Straeten \cite{rvdstrae} en assistent Jens Nicolay \cite{jnicolay}. Later kan deze basis uitgebreid worden naar geleerden binnen en buiten de VUB. 
-De communicatie met de cliënten gebeurt langs mail.
-
+Het project is opgedragen door de VUB in het kader van de lessen "Software Engineering". De cliënten zijn Ragnhild Van Der Straeten \cite{rvdstrae} en assistent Jens Nicolay \cite{jnicolay}. Later kan de basis van het project worden uitgebreid  naar geleerden binnen en buiten de VUB. De applicatie zal initieel op Wilma staan, een multifunctionele Linux-server die wordt onderhouden door Dirk van Deun \cite{dvdeun}. \\
 
 \subsection{Interne structuur}
-Er zijn verschillende rollen die moeten opgevuld worden.
+De teamleden vullen verschillende rollen in.
 De rollen en hun functies zijn: 
 
 \begin{itemize}
@@ -15,42 +13,58 @@ De rollen en hun functies zijn:
 \item Leidt het team
 \item Contactpersoon van het team
 \item Bemiddelaar tijdens meningsverschillen
-\item SPMP
+\item Verantwoordelijk voor de vergaderingen
+\item Maakt SPMP en onderhoudt het
 \end{itemize}
 
 \item Configuration Manager
 \begin{itemize}
 \item Beheert de tools en libraries die gebruikt worden
 \item Beheert de GitHub
-\item SCMP
+\item Maakt het SCMP en onderhoudt het
 \end{itemize}
 
 \item Database Manager
 \begin{itemize}
 \item Beheert de database
-\item SDD
+\item Maakt en onderhoudt het SDD samen met de Design Manager
 \end{itemize}
 
 \item Design Manager
 \begin{itemize}
-\item Webdesign
-\item Product design
-\item SDD
+\item Maakt en onderhoudt het SDD 
+\item Beslist en beheert het design van de toepassing en de database
+\item Communiceert met de cliënt over het design
 \end{itemize}
 
 \item Test Manager
 \begin{itemize}
-\item Zorgt dat het programma aan voldoende tests wordt onderworpen
-\item STD
+\item Zorgt dat het programma aan voldoende testen wordt onderworpen
+\item Documenteert en rapporteert de resultaten van de testen
+\item Maakt een test database aan
+\item Maakt en onderhoudt het STD
 \end{itemize}
 
 \item Quality Assurance
  \begin{itemize}
  \item Zorgt voor de kwaliteit van de code
- \item SQAP
- \end{itemize}
+ \item Is verantwoordelijk voor de kwaliteit van de applicatie
+ \item Zorgt ervoor dat aan alle nodige requirements voldaan zijn
+ \item Maakt en onderhoudt het SQAP
  \end{itemize}
  
+\item Requirements Manager
+\begin{itemize}
+\item Maakt en onderhoudt het SRS
+\item Beslist de prioriteiten van de requirements
+\item Communiceert met de cliënt over de requirements
+\end{itemize}
+
+\item Webmaster 
+\begin{itemize}
+\item Maakt en onderhoudt de website
+\end{itemize}
+\end{itemize}
  \newpage
 
 In de onderstaande tabel staan de functies en de personen die verantwoordelijk en back-up zijn voor deze functies.
@@ -61,11 +75,13 @@ In de onderstaande tabel staan de functies en de personen die verantwoordelijk e
 \textbf{Rol} & \textbf{Verantwoordelijke} & \textbf{Back-up}  \\
 \hline
  Project Manager & Wout Van Riel & Mathieu Reymond \\
+ Design Manager & Mathieu Reymond & Yannick Verschueren \\
+ Requirements Manager & Mathieu Reymond & Yannick Verschueren \\
  Test Manager & Yannick Verschueren & Arno Moonens \\
- Design & Mathieu Reymond & Yannick Verschueren \\
  Quality Assurance & Yannick Verschueren & Arno Moonens \\
  Database Manager & Arno Moonens & Sam Vervaeck \\
- Config Manager & Sam Vervaeck & Wout Van Riel 
+ Config Manager & Sam Vervaeck & Wout Van Riel \\
+ Webmaster & Sam Vervaeck & Wout Van Riel
 \end{tabular}
 \caption{Rolverdeling}
 \label{tab:rolverdeling}
@@ -74,7 +90,13 @@ In de onderstaande tabel staan de functies en de personen die verantwoordelijk e
 Er wordt gecommuniceerd in de groep met behulp van slack \cite{Slack} en mail. 
 
 \subsection{Werkplanning}
-In volgende Gant-chart is de werkplanning tot de volgende deadline te zien.
+In volgende Gant-chart \ref{fig:gant} is de werkplanning tot de volgende deadline te zien.
 \newline
 
-\includegraphics[width=\linewidth]{Gant_chart}
+\begin{figure}[h]
+    \begin{center}
+        \href{run:./Gant_chart.png}{\includegraphics[width=1 \columnwidth]{Gant_chart.png}}
+    \end{center}
+    \caption{Gant chart}
+    \label{fig:gant}
+\end{figure}
