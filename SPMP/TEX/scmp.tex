@@ -9,27 +9,32 @@ Dit document legt verder het beheer van de software configuration vast in dit pr
 
 \subsection{SCM-beheer}
 
-Sam Vervaeck is de hoofdverantwoordelijke van de Software Configuration Management. In het geval dat hij zijn rol niet kan vervullen zal Wout Van Riel zijn taken overnemen. \\
+\subsubsection{Organisatie}
 
-De software die uiteindelijk naar de klant geleverd wordt, moet uitvoerbaar zijn op Wilma, een server die door de klant zelf wordt beheerd. De onderstaande tabel geeft welke software in deze omgeving beschikbaar is. \\
+Sam Vervaeck is de hoofdverantwoordelijke van het Software Configuration Management Plan. In het geval dat hij zijn rol niet kan vervullen zal Wout Van Riel zijn taken overnemen. \\
 
-\begin{tabular}{r|l}
-Slackware & 14.1 \\
-Node.js & 0.10.28 \\
-npm & 1.4.9
-\end{tabular}
+\subsubsection{SCM verantwoordelijkheden}
+
+De Configuration Manager moet zorgen voor de nodige documentatie en uitleg over de processen die vastgelegd zijn in dit plan, zodat alle teamleden de richtlijnen correct kunnen toepassen.
+
+\subsubsection{Externe beperkingen op dit plan}
+
+Het is een vereiste van de klant dat GitHub als ontwikkelingsplatform wordt gebruikt door het team. Alle repositories moeten toegankelijk zijn voor de klant, zodat deze de voortgang van het project kan bijhouden.\\ 
+
+Verder is mogelijk om eenderwelke tool en software-library te gebruiken, zolang deze open-source is en binnen de context van dit project valt. Bij twijfel moet de Configuration Manager een van de klanten contacteren.
 
 \subsection{SCM-activiteiten}
 
 \subsubsection{Configuration-items}
 
-Het onderstaand stuk bevat een lijst van configuration-items (ofwel "CI's") die in dit project aan bod komen.
+Het onderstaand stuk bevat een lijst van configuration-items (ofwel "CI's") die in dit project aan bod komen. \\
 
-\textb{Presentatie-site}
+\textbf{Presentatie-site} \\
 
 Deze mini-website bevat alle informatie betreffende de ontwikkeling van het project. De klant kan op ieder gewenst moment deze website raadplegen om de huidige staat van het project in te zien.
 
-De website probeert zoveel mogelijk informatie te "aggregeren"  vanuit de ontwikkelingstools. Ontbrekende informatie moet handmatig worden aangevuld.
+De website probeert zoveel mogelijk informatie te "aggregeren"  vanuit de ontwikkelingstools. Ontbrekende informatie moet handmatig worden aangevuld. \\
+
 \begin{itemize}
 \item Een dashboard dat de voortgang van de requirements van het project weergeeft
 \item Een lijst van teamleden met hun functie
@@ -37,36 +42,39 @@ De website probeert zoveel mogelijk informatie te "aggregeren"  vanuit de ontwik
 \item Een wegwijzer voor tools die ook consulteerbaar zijn voor de klant, zoals GitHub
 \end{itemize}
 
-Voor de implementatie en het onderhoud van de website zijn zowel de Configuration Manager als de Design Manager verantwoordelijk. Van ieder teamlid wordt echter verwacht dat hij de website controleert en updatet indien nodig. De uiteindelijke verantwoordelijkheid ligt hiervoor bij de projectmanager.
+Voor de implementatie en het onderhoud van de website zijn zowel de Configuration Manager als de Design Manager verantwoordelijk. Van ieder teamlid wordt echter verwacht dat hij de website controleert en updatet indien nodig. De uiteindelijke verantwoordelijkheid ligt hiervoor bij de projectmanager. \\
 
-De website is handgeschreven. De laatste versie van de website bevindt zich telkens op GitHub en zal automatisch worden gedeployed naar de 
+De website is handgeschreven. De laatste versie van de website bevindt zich telkens op GitHub en zal automatisch worden gedeployed naar de Wilma-server. \\
 
-\textb{Documenten en rapporten}
+\textbf{Documenten en rapporten} \\
 
-Alle documenten worden onder versiebeheer bijgehouden op GitHub. Het is de teamleden toegestaan om ShareLaTeX te gebruiken, aangezien deze tool voor iedereen beschikbaar is en makkelijker is om mee te werken. De configuration manager is dan verantwoordelijk voor de synchronisatie tussen ShareLaTeX en GitHub. Het is hem vrij of hij dit manueel doet, of hij hiervoor een automatisatie-script gebruikt.
+Alle documenten worden onder versiebeheer bijgehouden op GitHub. Het is de teamleden toegestaan om ShareLaTeX te gebruiken, aangezien deze tool voor iedereen beschikbaar is en makkelijker is om mee te werken. De configuration manager is dan verantwoordelijk voor de synchronisatie tussen ShareLaTeX en GitHub. Het is hem vrij of hij dit manueel doet, of hij hiervoor een automatisatie-script gebruikt. \\
 
-\textb{Server-configuratie}
+\textbf{Server-configuratie} \\
 
-De standaardinstellingen van de server zullen in een apart CI opgenomen worden, onder de naam \textit{dotfiles}. Tot deze CI behoren alle globale configuratiebestanden voor de applicatie zelf en voor ondersteunende software op de server zoals Vim\footnote{\url{http://www.vim.org}}. In latere fasen kan dit artefact eventueel uitgebreid worden om configuratie-files te bevatten voor specifieke services. In dat geval zal dit artefact hernoemd worden naar \textit{server-config}.
+De standaardinstellingen van de server zullen in een apart CI opgenomen worden, onder de naam \textit{dotfiles}. Tot deze CI behoren alle globale configuratiebestanden voor de applicatie zelf en voor ondersteunende software op de server zoals Vim\footnote{\url{http://www.vim.org}}. In latere fasen kan dit artefact eventueel uitgebreid worden om configuratie-files te bevatten voor specifieke services. In dat geval zal dit artefact hernoemd worden naar \textit{server-config}. \\
 
-\textb{Applicatie}
+\textbf{Applicatie} \\
 
-De applicatie zelf wordt in twee grote stukken onderverdeeld: een \textit{server} en een \textit{client}. Het SSD gaat dieper in op de architectuur van beide delen. De twee CI's zullen wel duidelijk van elkaar te onderscheiden zijn. Ontwikkeling aan de client en de server kan bijgevolg los van elkaar gebeuren.
+Ook de applicatie wordt beschouwd als een CI. Het SSD gaat dieper in op de architectuur van de applicatie. Zowel de client en de server zullen in hetzelfde CI zitten, omdat ervaring uitwijst dat dit het onderhoud drastisch kan verminderen. \\
 
-\subsection{SCM-hulpmiddelen}
+\subsection{SCM-hulpmiddelen} \\
 
-Ieder teamlid is vrij om zijn eigen editor en besturingssyteem te gebruiken, maar er wordt wel verondersteld dat er een minimale shell-omgeving beschikbaar is. Concreet moet alle software op zijn minst kunnen draaien op de laatste versies van Windows, Mac OS X en Ubuntu LTS.
+Ieder teamlid is vrij om zijn eigen editor en besturingssyteem te gebruiken, maar er wordt wel verondersteld dat er een minimale shell-omgeving beschikbaar is. Concreet moet alle software op zijn minst kunnen draaien op de laatste versies van Windows, Mac OS X en Ubuntu LTS. \\
 
-\begin{tabular}{l|l|}
+\begin{tabular}{l|l|l}
 Applicatienaam & Versienummer & Omschrijving \\
-GulpJS & 3.8.10 & Automatisatie van taken  \\
+\hline
+GulpJS & 3.8.10 & Taak-automatisatie  \\
 Git & 1.9.3 & Versiebeheersysteem \\
-Travis CI & 2014-11-13.17-08 & Tests uitvoeren en deployment \\
+Travis CI & n.v.t. & Tests \\
 \end{tabular}
 
 \subsubsection{Controle van de configuratie}
 
-Om het ontwikkelingsproces zo vlot mogelijk te laten verlopen krijgt ieder teamlid vrije toegang tot de repositories. Er wordt wel verondersteld dat de configuration manager alle wijzigingen nauw opvolgt, zodat hij makkelijk een foute toepassing van een tool of proces kan corrigeren.
+Om het ontwikkelingsproces zo vlot mogelijk te laten verlopen krijgt ieder teamlid vrije toegang tot de repositories. Er wordt wel verondersteld dat de configuration manager alle wijzigingen nauw opvolgt, zodat hij makkelijk een foute toepassing van een tool of proces kan corrigeren. \\
+
+\textbf{VCS-branchingmodel} \\
 
 Het branching model van elke CI volgt in grote lijnen Git-flow\footnote{http://nvie.com/posts/a-successful-git-branching-model/} en zijn extensie GitHub-flow\footnote{http://scottchacon.com/2011/08/31/github-flow.html}. Voor elke nieuwe functionele requirement of bugfix wordt een nieuwe branch gemaakt. Er gelden enkele regels voor de naamgeving van de branch:
 
@@ -78,36 +86,160 @@ Het branching model van elke CI volgt in grote lijnen Git-flow\footnote{http://n
 \item een korte maar goede beschrijving zodat de logs duidelijk zijn
 \end{itemize}
 
-Teamleden mogen hun lokale history \textb{rebasen} om overbodige merges te vermijden. Dit is geen verplichting en wordt enkel aangeraden aan personen die vertrouwd zijn met het concept van rebasing.
+Teamleden mogen hun lokale history \textbf{rebasen} om overbodige merges te vermijden. Dit is enkel verplicht indien de branch die gerebased moet worden minder dan 5 commits achter loopt op zijn parent. In de andere gevallen is het toegelaten om een gewone \textit{merge} te gebruiken, hoewel de rebase de voorkeur heeft waar mogelijk.\\
 
-Indien twee of meerdere teamleden met eenzelfde bug of feature bezig zijn, moeten ze hun branchnaam prefixen met \textit{gebruikersnaam-}. Bij een conflict heeft de Test Manager het laatste woord over welke versie teruggaat naar de hoofdbranch.
+Indien twee of meerdere teamleden met eenzelfde bug of feature bezig zijn en ze deze wensen publiek te maken, dan moeten ze hun branchnaam prefixen met \textit{gebruikersnaam-}. De test manager en de configuration manager zijn beiden verantwoordelijk voor het goedkeuren of afwijzen van wijzigingen die terug naar de masterbranch moeten. Hiervoor kunnen de andere teamleden een \textit{pull request} op GitHub zelf openen. \\
 
-Er is geen aparte productie-branch op de ser
+Er bestaat geen aparte productie-branch. In de plaats daarvan geven tags aan welke versies op de masterbranch uitvoerig gecontroleerd werden. Deze tags hebben altijd de vorm van \textit{se2-iterN-M}, waarbij \textit{M} bij elke productie-release. De manier waarop deze tags worden aangemaakt en beheerd staat in het volgende punt beschreven.
 
 \subsubsection{Beheer van uitgaven en opleveringen}
 
-Elke CI wordt gekenmerkt door een eigen tempo in het ontiwkkelproces. Om die reden verschilt het release/deployment-proces van iedere tool lichtjes.
+Elke CI wordt gekenmerkt door een eigen tempo in het ontwikkelingsproces. Om die reden verschilt het release/deployment-proces van iedere tool lichtjes.\\
 
-Voor de applicatie is het nodig dat de productieversie van zowel de client als de server grondig getest is geweest en geen fouten bevat. Om die reden zal de Test Manager handmatig aanduiden welke versies gereleased kunnen worden. Deze releases worden dan automatisch gedeployed.
+Voor de applicatie is het nodig dat de productieversie van zowel de client als de server grondig getest is geweest en geen fouten bevat. Om die reden zal de Test Manager handmatig aanduiden welke versies gereleased kunnen worden. Deze releases worden dan automatisch gedeployed.\\
 
-De Configuration Manager haalt na iedere iteratie de documenten rechtstreeks van ShareLaTeX en plaatst ze in het versiebeheersysteem. Na elke wijziging wordt er dus automatisch een nieuwe release gemaakt. De releases bevatten de documenten in PDF-vorm, zodat deze automatisch kunnen worden gedeployed naar de presentatie-website.
+De Configuration Manager haalt na iedere iteratie de documenten rechtstreeks van ShareLaTeX en plaatst ze in het versiebeheersysteem. Na elke wijziging wordt er dus automatisch een nieuwe release gemaakt. De releases bevatten de documenten in PDF-vorm, zodat deze automatisch kunnen worden gedeployed naar de presentatie-website.\\
 
-De presentatie-website is minder complex. Bovendien is het minder belangrijk dat de website volledig foutloos is, maar is het wel belangrijk dat snelle updates mogelijk zijn. Daarom wordt voor de presentatie-website de release-fase overgeslagen en rechtstreeks gedeployed vanuit de meest recente versie.
+De presentatie-website is minder complex. Bovendien is het minder belangrijk dat de website volledig foutloos is, maar is het wel belangrijk dat snelle updates mogelijk zijn. Daarom wordt voor de presentatie-website de release-fase overgeslagen en rechtstreeks gedeployed vanuit de meest recente versie.\\
 
 Onsderstaande tabel vat deze configuratie samen.
 
 \begin{tabular}{l|l|l}
-CI & Release & Deployment \\
+CI-naam & Release & Deployment \\
+\hline
 Server & na goedkeuring & bij nieuwe release \\
 Client & na goedkeuring & bij nieuwe release \\
 Documenten & nieuwe wijziging op de hoofdbranch & bij nieuwe release \\
-Presentatie-site & n.v.t. & Bij nieuwe wijziging \\
-Serverconfiguratie & n.v.t. & n.v.t. 
+Presentatie-site & bij iedere iteratie & bij nieuwe versie \\
+Serverconfiguratie & bij iedere iteratie & n.v.t. 
 \end{tabular}
+
+\subsection{Code-standaarden} \\
+
+Om overzichtelijke, uniforme en duidelijke code te hebben is het nodig om een set van conventies te volgen. Deze richtlijnen zijn gebaseerd op Crockords code conventions\cite{ccd}
+en de Google Javascript Style Guide\cite{gjsg}.
+
+\subsubsection{Taalregels}
+
+\textbf{Variabelen} \\
+
+Alle variables worden door middel van ``\lstinline{var}'' gedeclareerd, om te voorkomen dat de globale omgeving vervuild wordt. \\
+
+\textbf{Statements} \\
+
+\begin{itemize}
+  \item Elke lijn heeft maximum een simpele statement.
+  \item ``\lstinline{;}'' wordt altijd gebruikt om het einde van een statement aan te duiden.
+\end{itemize}
+
+\textbf{Methoden en eigenschap definities} \\
+
+De verkozen stijl voor methodes is:\\
+\begin{lstlisting}
+Foo.prototype.bar = function() {
+    /* ... */
+};
+\end{lstlisting}
+
+De verkozen stijl voor andere eigenschappen is om ze in de constructor te initialiseren:\\
+
+\begin{lstlisting}
+/** @constructor */
+function Foo() {
+    this.bar = value;
+}
+\end{lstlisting}
+
+\textbf{Multiline string literals}
+
+Schrijf nooit strings op meerdere lijnen. \\
+
+\begin{lstlisting}
+var myString = 'A rather long string of English text, an error message \
+                actually that just keeps going and going';
+\end{lstlisting}
+
+In plaats daarvan worden ze geconcateneerd. \\
+
+\begin{lstlisting}
+var myString = 'A rather long string of English text, an error message ' +
+    'actually that just keeps going and going';
+\end{lstlisting}
+
+\subsubsection{Stijlregels}
+
+\textbf{Benamingen}
+
+Gebruik \textit{camelCase} voor het benoemen van variabelen, functies, en andere identifiers, behalve voor de naam van een bestand.
+
+\begin{itemize}
+	\item \lstinline{functionNamesLikeThis}
+	\item \lstinline{variableNamesLikeThis}
+	\item \lstinline{ClassNamesLikeThis}
+	\item \lstinline{EnumNamesLikeThis}
+	\item \lstinline{methodNamesLikeThis}
+	\item \lstinline{CONSTANT_VALUES_LIKE_THIS}
+	\item \lstinline{foo.namespaceNamesLikeThis.bar}
+	\item \lstinline{filenameslikethis.js}
+\end{itemize}
+
+\subsubsection{Code formattering}
+
+\paragraph{Indentatie}
+
+Omdat ``\lstinline{TAB}'' verschillende resultaten geeft afhankelijk van het gebruikte programma wordt deze niet gebruikt. Indentatie gebeurt met vier spaties.
+
+\paragraph{Gekrulde haakjes}
+
+De gekrulde haakjes worden op dezelfde lijn als wat ze openen gezet.\\
+
+\begin{lstlisting}
+if (something) {
+    // ...
+} else {
+    // ...
+}
+\end{lstlisting}
+
+\paragraph{Witruimten}
+
+Er zijn geen witruimten tussen linker -en rechter haakjes.\\
+\begin{lstlisting}
+var arr = [1, 2, 3];  // No space after [ or before ].
+\end{lstlisting}
+
+Na ``\lstinline{,}'' wordt er altijd een witruimte gezet.
+
+\subsubsection{Databaseregels}
+
+\paragraph{Identifiers}
+
+Alle identifiers worden vermeld in \textit{snake\_case}. Ze worden ook steeds met kleine letters geschreven.
+
+\begin{itemize}
+\item account
+\item first\_name
+\end{itemize}
+
+\paragraph{Primary key}
+
+Deze worden steeds "id" genoemd. Dit is kort, simpel en makkelijk te onthouden.
+
+\paragraph{Foreign key}
+
+De velden in een \textit{foreign key} tabel moeten een combinatie zijn van de naam van de gerefereerde tabel en van de gerefereerde velden.
+
+\begin{lstlisting}
+CREATE TABLE publication_written_by_person (
+  publication_id       bigint NOT NULL REFERENCES publication(id),
+  person_id     bigint NOT NULL REFERENCES person(id),
+  CONSTRAINT publication_written_by_person_pkey PRIMARY KEY (publication_id,
+  person_id));
+\end{lstlisting}
 
 \subsection{Onderhoud van het SCM-plan}
 
-De Configuration Manager is verplicht om aanpassingen in het beheer van de software configuratie grondig bij te houden. Hij dient bij het begin van elke iteratie dit plan grondig te herzien en aan de passen aan de verwachtingen van die (en volgende) iteraties.
+De Configuration Manager is verplicht om aanpassingen in het beheer van de software configuratie grondig bij te houden. Hij dient bij het begin van elke iteratie dit plan grondig te herzien en aan de passen aan de verwachtingen van die (en volgende) iteraties.\\
 
 Aangezien net zoals de software zelf het ook goed mogelijk is dat de ondersteunende tools of processen in de toekomst moeten veranderen, is het altijd mogelijk om wijzigingen aan dit Configuration Management Plan aan te brengen. De enige vereiste is dat het hele team hiermee akkoord gaat nadat de Configuration Manager de wijzigingen heeft voorgelegd. \\
 

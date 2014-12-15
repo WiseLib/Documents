@@ -17,7 +17,16 @@ Een account heeft volgende velden :
   \item E-mail
   \item Hiërarchische affiliatie
   \item Onderzoeksdomein
-\end{itemize}     
+\end{itemize}
+De anonieme gebruiker vult zijn gegevens in, het systeem kijkt dan na of er al een account met het ingegeven e-mailadres bestaat. Als het account al bestaat, treedt er een uitzondering op.
+Daarna kijkt het systeem of er reeds personen bestaan met de ingegeven naam en voornaam 
+(dit is mogelijk indien een vorige gebruiker de naam en voornaam van een persoon die nog geen account heeft, in het systeem heeft ingegeven als co-auteur van zijn paper). 
+In dit geval moet de gebruiker zichzelf kiezen uit de gevonden lijst (als hij er tussen zit).
+Uiteindelijk maakt het systeem een nieuw account aan.\\
+EXC          &
+\begin{itemize}
+\item [bestaand e-mailadres] Het systeem meldt aan dat het e-mailadres al in gebruik is. De gebruiker wordt gevraagd om een ander e-mailadres in te vullen.
+\end{itemize}
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -32,7 +41,12 @@ Wat aanpasbaar is :
   \item Hiërarchische affiliatie
   \item Onderzoeksdomein - Alleen toevoegen
   \item Academische discipline
-\end{itemize}     
+\end{itemize}
+De ingelogde gebruiker past zijn gegevens aan. Het systeem slaagt de gegevens op. Als het e-mailadres al bestaat in de database treedt er een uitzondering op.\\
+EXC          &
+\begin{itemize}
+\item [bestaand e-mailadres] Het systeem meldt aan dat het e-mailadres al in gebruik is. De gebruiker wordt gevraagd om een ander e-mailadres in te vullen.
+\end{itemize}
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -40,7 +54,10 @@ ID           & ACC3\\
 TITLE        & Bibliotheek\\
 PRIORITY     & medium\\
 DEPENDENCY   & ACC1\\
-DESC         & Een gebruiker heeft een bibliotheek van papers die hij/zij interessant vindt.     
+DESC         & Een gebruiker heeft een bibliotheek van papers.
+
+Wanneer de gebruiker een publicatie aan het bekijken is, heeft hij de mogelijkheid om die toe te voegen aan zijn bibliotheek. Het systeem laat alleen toe om publicaties die zich nog niet in de bibliotheek bevinden en die de gebruiker niet zelf geschreven heeft toe te voegen.\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -48,7 +65,8 @@ ID           & ACC4\\
 TITLE        & Bibliotheek aanpassen\\
 PRIORITY     & medium\\
 DEPENDENCY   & ACC3\\
-DESC         & Een gebruiker kan de papers in zijn bibliotheek bekijken en verwijderen.    
+DESC         & Een gebruiker kan de papers in zijn bibliotheek bekijken en verwijderen.\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -56,7 +74,8 @@ ID           & ACC5\\
 TITLE        & Eigen publicatielijst\\
 PRIORITY     & medium\\
 DEPENDENCY   & ACC1, PUB1\\
-DESC         & Een gebruiker heeft een lijst van zijn eigen publicaties en kan hun details makkelijk bekijken.  
+DESC         & Een gebruiker heeft een lijst van zijn eigen publicaties en kan hun details makkelijk bekijken.\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -68,8 +87,9 @@ DESC         & Een gebruiker kan zien met welke personen hij al in contact is ge
 Dit zijn :
 \begin{itemize}
 \item personen van dezelfde afdeling
-\item personen met wie hij in het verleden heeft samengewerkt.
-\end{itemize}    
+\item co-auteurs van zijn publicaties.
+\end{itemize}\\
+EXC          & none    
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -80,15 +100,17 @@ DEPENDENCY   & ACC1\\
 DESC         & Een gebruiker moet volgende statistieken van zijn account kunnen bekijken:
 \begin{itemize}
 \item Gemaakte publicaties per periode (dag, maand, jaar,\ldots)
-\end{itemize}
+\end{itemize}\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
 ID           & ACC8\\
 TITLE        & Statistieken van account downloaden\\
 PRIORITY     & low\\
-DEPENDENCY   & ACC5\\
-DESC         & Een gebruiker moet een file kunnen downloaden die alle statistieken van zijn account bevat.     
+DEPENDENCY   & ACC7\\
+DESC         & Een gebruiker moet een file kunnen downloaden die alle statistieken van zijn account bevat.\\
+EXC          & none
 \end{longtable}
 
 \subsubsection{Publicatiesysteem - PUB}
@@ -119,8 +141,21 @@ Een paper heeft de volgende meta-informatie :
 \item pagina's
 \item jaar
 \item URL
+\item disciplines
 \item keywords
-\end{itemize}      
+\end{itemize} 
+Het systeem zoekt naar bestaande personen die overeenkomen met de ingevulde auteurs. Als auteurs niet bestaan in de gegevensbank wordt de gebruiker eerst gevraagd om deze aan te maken.
+
+De journal of proceeding van de publicatie wordt ook door het systeem opgezocht. De gebruiker moet kiezen tussen de aangeboden journals en proceedings.
+
+De gebruiker krijgt een lijst van mogelijke academische disciplines. Hij voegt aan zijn publicatie een discipline uit die lijst toe.
+
+Na confirmatie van de gebruiker wordt de publicatie door het systeem toegevoegd.
+Als niet alle velden ingevuld zijn treedt  een uitzondering op. Het systeem voegt de publicatie toe aan de publicatielijst van de gebruiker.\\
+EXC          &
+\begin{itemize}
+\item [legen velden] Het systeem vraagt aan de gebruiker om de lege velden in te vullen.
+\end{itemize}
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -128,7 +163,13 @@ ID           & PUB1.1\\
 TITLE        & Toevoegen via PDF\\
 PRIORITY     & medium\\
 DEPENDENCY   & none\\
-DESC         & Een gebruiker kan zijn paper als .pdf uploaden.     
+DESC         & Een gebruiker kan zijn paper als .pdf uploaden.
+
+De gebruiker wordt gevraagd om een .pdf file up te loaden. De publicatie-velden worden door het systeem ingevuld indien mogelijk. De gebruiker kan deze zelf nog aanpassen of aanvullen.
+
+Zelfs als de auteurs, die uit de .pdf gehaald zijn, bestaan in het systeem, moet de gebruiker voor elke auteur bevestigen welk van de voorgestelde keuzes de correcte is.\\
+EXC          & none
+
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -136,7 +177,12 @@ ID           & PUB1.2\\
 TITLE        & Toevoegen via Bibtex\\
 PRIORITY     & medium\\
 DEPENDENCY   & none\\
-DESC         & Een gebruiker kan zijn paper als een bibtex uploaden.     
+DESC         & Een gebruiker kan zijn paper als een bibtex uploaden.
+
+De gebruiker wordt gevraagd om een bibtex file up te loaden. De publicatie-velden worden door het systeem ingevuld indien mogelijk. De gebruiker kan deze zelf nog aanpassen of aanvullen.
+
+Zelfs als de auteurs, die uit de bibtex gehaald zijn, bestaan in het systeem, moet de gebruiker voor elke auteur bevestigen welk van de voorgestelde keuzes de correcte is.\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -144,7 +190,10 @@ ID           & PUB1.3\\
 TITLE        & Handmatig toevoegen\\
 PRIORITY     & high\\
 DEPENDENCY   & none\\
-DESC         & Een gebruiker kan de meta-informatie van zijn paper handmatig invullen.     
+DESC         & Een gebruiker kan de meta-informatie van zijn paper handmatig invullen. 
+
+De gebruiker vult manueel alle velden in.\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -155,11 +204,12 @@ DEPENDENCY   & none\\
 DESC         & Elke publicatie heeft een rank.
 De rank is gebaseerd op :
 \begin{itemize}
-\item Kwaliteit van publicatie (google conference/journal rankings)
+\item Kwaliteit van publicatie (rank van de journal/proceeding van de publicatie)
 \item Impact van publicatie (referenties naar de publicatie in andere publicaties)
 \item Aanwezigheid in bibliotheek van andere gebruikers
 \item Aantal publicaties gedeeld door het aantal maanden sinds de eerste publicatie
-\end{itemize}     
+\end{itemize}\\
+EXC          & none     
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -173,7 +223,24 @@ DESC         & Een gebruiker moet een paper kunnen opzoeken in de bibliotheek va
 \item dl.acm.org
 \item mendeley.com
 \item ieeexplore.ieee.org
-\end{itemize}     
+\end{itemize}
+De gebruiker kan publicaties opzoeken volgens verschillende kriteria :
+\begin{itemize}
+\item titel
+\item disciplines
+\item auteurs
+\item keywords
+\end{itemize}
+Het volgorde waarin de resultaten (van de applicatie) getoond worden hangen af van :
+\begin{enumerate}
+\item de gegeven titel
+\item de gegeven auteurs
+\item de gegeven disciplines
+\item de gegeven keywords
+\item de rank van de publicatie
+\end{enumerate}
+Indien er gezocht werd in externe databases blijft het volgorde hetzelfde als het resultaat van de externe website.\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -181,7 +248,8 @@ ID           & PUB4\\
 TITLE        & Suggestie voor papers\\
 PRIORITY     & low\\
 DEPENDENCY   & ACC1, PUB3\\
-DESC         &  De applicatie raadt papers aan die nog niet in de database van de applicatie zelf aanwezig zijn (maar wel in databases van andere sites). Er worden papers aangeraden op basis van relaties tussen co-auteurs, onderzoeksdomeinen en tags.     
+DESC         &  De applicatie raadt papers aan die nog niet in de bibliotheek van de gebruiker aanwezig zijn. Er worden papers aangeraden op basis van relaties tussen co-auteurs, onderzoeksdomeinen en tags.  \\
+EXC          & none   
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -189,7 +257,8 @@ ID           & PUB5\\
 TITLE        & Negeren van suggesties\\
 PRIORITY     & low\\
 DEPENDENCY   & PUB4\\
-DESC         & Een gebruiker kan aanduiden dat men niet geïnteresseerd is in een paper die door het systeem werd aangeraden. Deze paper wordt dan gedurende 30 dagen niet meer voorgesteld. Als men hierna opnieuw aanduidt dat men niet geïnteresseerd is wordt de paper gedurende 90 dagen niet meer getoond. Na een 3e keer wordt de paper niet meer voorgesteld.     
+DESC         & Een gebruiker kan aanduiden dat hij niet geïnteresseerd is in een paper die door het systeem werd aangeraden. Deze paper wordt dan gedurende 30 dagen niet meer voorgesteld. Als hij hierna opnieuw aanduidt dat hij niet geïnteresseerd is wordt de paper gedurende 90 dagen niet meer getoond. Na een 3e keer wordt de paper niet meer voorgesteld.\\
+EXC          & none     
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -197,7 +266,8 @@ ID           & PUB6\\
 TITLE        & Annoteren van paper\\
 PRIORITY     & low\\
 DEPENDENCY   & ACC1\\
-DESC         & Gebruikers kunnen tags en commentaar toevoegen aan een paper     
+DESC         & Gebruikers kunnen tags en commentaar toevoegen aan een paper.\\
+EXC          & none 
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -205,18 +275,15 @@ ID           & PUB7\\
 TITLE        & Links toevoegen aan paper\\
 PRIORITY     & low\\
 DEPENDENCY   & ACC1\\
-DESC         & Gebruikers kunnen volgende zaken toevoegen aan een paper. Deze bevatten telkens links naar een detailpagina (pagina van een auteur,\ldots)
+DESC         & Gebruikers kunnen links die niet standaard door de applicatie getoond worden toevoegen aan een publicatie.
+Deze links kunnen wijzen naar :
 \begin{itemize}
-\item co-auteurs
-\item citaties
-\item bibliografie
-\end{itemize}
-Daarnaast kunnen ook deze zaken gelinkt worden aan een paper:
-\begin{itemize}
+\item een vorige versie van het document
 \item slides
 \item oefeningen
 \item andere documenten
-\end{itemize}     
+\end{itemize}\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -228,7 +295,8 @@ DESC         & Een gebruiker moet volgende statistieken kunnen bekijken van een 
 \begin{itemize}
 \item Ranking van de publicatie
 \item Aantal citaties
-\end{itemize}     
+\end{itemize}\\
+EXC          & none     
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -236,7 +304,8 @@ ID           & PUB9\\
 TITLE        & Statistieken van paper downloaden\\
 PRIORITY     & low\\
 DEPENDENCY   & PUB8\\
-DESC         & Een gebruiker moet een file kunnen downloaden die alle statistieken van de betreffende paper bevat.     
+DESC         & Een gebruiker moet een file kunnen downloaden die alle statistieken van de betreffende paper bevat.\\
+EXC          & none          
 \end{longtable}
 
 \subsubsection{Sociale interactie - SOC}
@@ -249,10 +318,22 @@ DEPENDENCY   & ACC1\\
 DESC         & De applicatie kan het sociaal netwerk van een gebruiker genereren :
 \begin{itemize}
 \item gebruikers en publicaties zijn nodes
-\item nodes zijn gelinkt volgens hun relatie (co-auteur, citatie...)
+\item nodes zijn gelinkt volgens hun relatie.
+Belangrijke relaties zijn :
+\begin{itemize}
+\item co-auteur
+\item citatie
+\end{itemize}
+Minder belangrijke relaties zijn :
+\begin{itemize}
+\item affiliatie
+\item academische discipline
+\item journal/proceeding
+\end{itemize}
 \item kleuren worden gebruikt voor duidelijkheid
 \item lijndikte afhankelijk van het belang van de relatie
-\end{itemize}     
+\end{itemize}\\
+EXC          & none
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}
@@ -268,7 +349,7 @@ ID           & SOC3\\
 TITLE        & klikbare nodes\\
 PRIORITY     & low\\
 DEPENDENCY   & SOC1\\
-DESC         & De gebruiker kan op nodes klikken voor extra informatie     
+DESC         & De gebruiker kan een node openen voor extra informatie     
 \end{longtable}
 
 \subsubsection{Mobiele gebruiker - MOB}
@@ -278,7 +359,7 @@ ID           & MOB1\\
 TITLE        & Mobiele interface\\
 PRIORITY     & medium\\
 DEPENDENCY   & none\\
-DESC         & Er moet een aangepaste interface zijn voor iemand die gebruik maakt van een mobiel apparaat (hierna                genoemd de "mobiele gebruiker"). Deze inteface moet dus aangepast zijn aan een kleiner scherm     
+DESC         & Er moet een aangepaste interface bestaan voor iemand die gebruik maakt van een mobiel apparaat (hierna genoemd de "mobiele gebruiker"). Deze interface moet dus aangepast zijn aan een kleiner scherm     
 \end{longtable}
 
 \begin{longtable}{lp{10cm}}

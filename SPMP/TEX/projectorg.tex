@@ -1,9 +1,21 @@
 \section{Project organisatie}
 
-\subsection{Externe Interfaces}
-Het project is opgedragen door de VUB in het kader van de lessen "Software Engineering". De cliënten zijn Ragnhild Van Der Straeten \cite{rvdstrae} en assistent Jens Nicolay \cite{jnicolay}. Later kan de basis van het project worden uitgebreid  naar geleerden binnen en buiten de VUB. De applicatie zal initieel op Wilma staan, een multifunctionele Linux-server die wordt onderhouden door Dirk van Deun \cite{dvdeun}. \\
+\subsection{Externe interfaces}
+Het project is opgedragen door de VUB in het kader van de lessen "Software Engineering". De cliënten zijn Ragnhild Van Der Straeten \cite{rvdstrae} en assistent Jens Nicolay \cite{jnicolay}. De applicatie zal initieel op Wilma \cite{Wilma} staan, een multifunctionele Linux-server die wordt onderhouden door Dirk van Deun \cite{dvdeun}. \\
 
 \subsection{Interne structuur}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{./Wiselib_intOrg.png}
+\caption{Interne organisatie}
+\label{fig:intorg}
+\end{figure}
+
+De groene pijlen duiden aan wie toezicht houdt over wie.\newline 
+De blauwe pijlen duiden aan tussen wie er veel gecomuniceerd wordt.
+
+\subsection{Rollen en verantwoordelijkheden}
 De teamleden vullen verschillende rollen in.
 De rollen en hun functies zijn: 
 
@@ -20,7 +32,7 @@ De rollen en hun functies zijn:
 \item Configuration Manager
 \begin{itemize}
 \item Beheert de tools en libraries die gebruikt worden
-\item Beheert de GitHub
+\item Beheert GitHub
 \item Maakt het SCMP en onderhoudt het
 \end{itemize}
 
@@ -67,36 +79,3 @@ De rollen en hun functies zijn:
 \end{itemize}
  \newpage
 
-In de onderstaande tabel staan de functies en de personen die verantwoordelijk en back-up zijn voor deze functies.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{c|c|c}
-\textbf{Rol} & \textbf{Verantwoordelijke} & \textbf{Back-up}  \\
-\hline
- Project Manager & Wout Van Riel & Mathieu Reymond \\
- Design Manager & Mathieu Reymond & Yannick Verschueren \\
- Requirements Manager & Mathieu Reymond & Yannick Verschueren \\
- Test Manager & Yannick Verschueren & Arno Moonens \\
- Quality Assurance & Yannick Verschueren & Arno Moonens \\
- Database Manager & Arno Moonens & Sam Vervaeck \\
- Config Manager & Sam Vervaeck & Wout Van Riel \\
- Webmaster & Sam Vervaeck & Wout Van Riel
-\end{tabular}
-\caption{Rolverdeling}
-\label{tab:rolverdeling}
-\end{table}
-
-Er wordt gecommuniceerd in de groep met behulp van slack \cite{Slack} en mail. 
-
-\subsection{Werkplanning}
-In volgende Gant-chart \ref{fig:gant} is de werkplanning tot de volgende deadline te zien.
-\newline
-
-\begin{figure}[h]
-    \begin{center}
-        \href{run:./Gant_chart.png}{\includegraphics[width=1 \columnwidth]{Gant_chart.png}}
-    \end{center}
-    \caption{Gant chart}
-    \label{fig:gant}
-\end{figure}

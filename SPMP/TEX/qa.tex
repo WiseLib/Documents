@@ -5,7 +5,6 @@
 Dit document behandelt de processen en methodes die gebruikt worden tijdens de quality assurance van het project "WiseLib". Dit document volgt de IEEE standaarden voor Quality Assurance Plannen.
 \footnote{\url{http://users.csc.calpoly.edu/~jdalbey/205/Resources/IEEE7301989.pdf}}
 
-
 \subsection{Referentiedocumenten}
 
 \begin{description}
@@ -16,12 +15,14 @@ Dit document behandelt de processen en methodes die gebruikt worden tijdens de q
 
 \subsubsection{Organisatie}
 
-De Quality Assurance wordt verzorgd door Yannick Verschueren, tevens de Test Manager, en Arno Moonens. Hierbij speelt Yannick de hoofdrol en zal Arno slechts invallen in geval van nood. De Quality Assurance Manager heeft als verantwoordelijkheid dat de gevraagde functionaliteiten van het project correct werken, en dat de geproduceerde code geen bugs meer bevat. Aangezien software-ontwikkeling verdeeld wordt over het gehele team zal er dus grote afhankelijkheid zijn tussen de QA manager en de overige teamleden.
+De Quality Assurance wordt verzorgd door Yannick Verschueren, tevens de Test Manager, en Arno Moonens. Hierbij speelt Yannick de hoofdrol en zal Arno slechts invallen in geval van nood. De Quality Assurance Manager heeft als verantwoordelijkheid dat de gevraagde functionaliteiten van het project correct werken, en dat de geproduceerde code geen bugs meer bevat. Aangezien softwareontwikkeling verdeeld wordt over het gehele team zal er dus grote afhankelijkheid zijn tussen de QA manager en de overige teamleden.
 
 \subsubsection{Taken}
 
 Hoewel het Quality Assurance proces gedurende het hele project actief is, zal er na de voltooiing van een functionaliteit een periode van verhoogde activiteit volgen. Tijdens deze periode wordt er nagegaan of de functionaliteit op een correcte manier functioneert.
 Tussen deze verschillende periode zal er uiteraard ook gewerkt aan bugs en algemene correctheid van de code.
+
+Naast algemene controle van de code, valt ook de verzorging van de documenten onder de taak van de Quality Assurance manager.
 
 \subsubsection{Verantwoordelijkheden}
 
@@ -31,11 +32,11 @@ De manager heeft verschillende verantwoordelijkheden en komen allemaal terug op 
 
 \begin{itemize}
 
-\item Het bedenken en oprichten van de quality assurance procedures , standaarden en specificaties.
+\item Het bedenken en oprichten van de quality assurance procedures, standaarden en specificaties.
 
-\item Het herzien van de vereisten van de klant en voor zorgen dat deze na gegaan worden.
+\item Het herzien van de vereisten van de klant en voor zorgen dat deze nagegaan worden.
 
-\item Samenwerken met productie team om kwaliteits vereisten op te stellen.
+\item Samenwerken met het productie team om kwaliteit vereisten op te stellen.
 
 \item Standaarden voor kwaliteit opzetten.
 
@@ -48,18 +49,16 @@ De manager heeft verschillende verantwoordelijkheden en komen allemaal terug op 
 
 De documenten beschreven in de Project Deliverables volgen de IEEE standaarden en zijn geschreven in correct algemeen Nederlands. De documenten worden aangemaakt met behulp van Latex \footnote{\url{http://www.latex-project.org/}}
 
-
-
 \subsection{Standaarden, gebruiken, conventies en metrieken}
 
 \subsubsection {Standaarden}
 
 \paragraph {Documentstandaarden}
-De documenten gebruiken de IEEE standaarden  \footnote{\url{http://www.ieee.org/publications_standards/publications_standards_index.html}}
+De documenten gebruiken de IEEE standaarden \footnote{\url{http://www.ieee.org/publications_standards/publications_standards_index.html}}
 
 \paragraph{Codering standaarden}
 
-Codering standaarden en conventies zijn gebaseerd op Crockords code conventions en de Google Javascript Style Guide.Deze conventies worden verder besproken in deel vijf van het Software Design Document.
+Codering standaarden en conventies zijn gebaseerd op Crockords code conventions en de Google Javascript Style Guide. Deze conventies worden verder besproken in deel vijf van het Software Configuration Management Plan.
 
 \paragraph{Commentaar standaarden}
 
@@ -67,15 +66,13 @@ Tijdens het schrijven van code zal gebruik gemaakt worden van JSDoc \footnote{\u
 
 \subsubsection{Gebruiken}
 
-Naast het testen van de applicatie door algemeen gebruik, zal het testing-framework (zie 9) gebruikt worden om correctheid van de geimplementeerde functionaliteiten te garanderen doorheen de verschillende iteraties van de applicatie. 
+Naast het testen van de applicatie door algemeen gebruik, zal het testing-framework (zie 8) gebruikt worden om correctheid van de geimplementeerde functionaliteiten te garanderen doorheen de verschillende iteraties van de applicatie.
 
 %\subsection{Audits}
 % Niet nodig blijkbaar
 
-
 \subsection{Test}
 Niet van toepassing (SVVP (Software Verification an Validation Plan) niet vereist)
-
 
 \subsection{Probleem rappotering}
 
@@ -92,11 +89,9 @@ Het QA proces gebruikt Mocha \footnote{\url{https://github.com/mochajs}} als tes
 
 Het gebruik van het framework wordt in het Software Test Document uitgebreider uitgelegd.
 
-
 \subsubsection{Methodologie}
 
-Tijdens de implementatie van de applicatie wordt gebruik gemaakt van het Agile ontwikkelingsmodel. Dit is een test-driven ontwikkelingsmodel, dit betekent dat unit tests worden geimplementeerd voordat code wordt geschreven. Deze unit tests falen in het begin maar zullen naarmate het project vordert de geschreven code testen. Uiteraard worden ook de testen onderhouden en zullen zij mee evolueren met het verloop van het project.
-
+Tijdens de implementatie van de applicatie wordt gebruik gemaakt van het Agile ontwikkelingsmodel. Dit is een test-driven ontwikkelingsmodel, dit betekent dat unit tests worden geïmplementeerd voordat code wordt geschreven. Deze unit tests falen in het begin maar zullen naarmate het project vordert de geschreven code testen. Uiteraard worden ook de testen onderhouden en zullen zij mee evolueren met het verloop van het project.
 
 \subsection{Code Beheer}
 

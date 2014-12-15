@@ -5,7 +5,6 @@
 \usepackage{hyperref}
 \usepackage{longtable}
 
-
 \setlength{\parindent}{0pt}
 
 \title{Software Test Document}
@@ -13,40 +12,39 @@
 \begin{document}
 
 \begin{titlepage}
-    \vspace*{\fill}
-    \begin{center}
-      {\Huge Software Test Plan}\\[0.5cm]
-      {\Large Yannick Verschueren}\\[0.4cm]
-      November 2014
-    \end{center}
-    \vspace*{\fill}
-  \end{titlepage}
+\vspace*{\fill}
+\begin{center}
+{\Huge Software Test Plan}\\[0.5cm]
+{\Large Yannick Verschueren}\\[0.4cm]
+November 2014
+\end{center}
+\vspace*{\fill}
+\end{titlepage}
 
 \newpage
 
 Document geschiedenis
 
 \begin{center}
-  \begin{tabular}{ c | c | c | c}
-  
-    
-   Versie & Datum & Auteur/co-auteur & Beschrijving \\ \hline
-   
-   \hline
+\begin{tabular}{ c | c | c | c}
 
-	1 & November 2014 & Yannick Verschueren & Eerste versie \\ 
+Versie & Datum & Auteur/co-auteur & Beschrijving \\ \hline
 
-    \hline
-    
-  \end{tabular}
+\hline
+
+1 & November 2014 & Yannick Verschueren & Eerste versie \\
+
+2 & December 2014 & Yannick Verschueren & Tweede versie \\
+
+\hline
+
+\end{tabular}
 \end{center}
-	
 
 \newpage
 
 \renewcommand\contentsname{Inhoudstafel}
 \tableofcontents
-
 
 \newpage
 
@@ -56,15 +54,15 @@ Document geschiedenis
 Het Software Test Plan behandelt alle methoden, gebruiken en standaarden die van toepassing zijn bij het testen van het "WiseLib" project. Het domein van de testen beschreven in dit plan beschouwt:
 
 \begin{enumerate}
-\item Het testen van de funtionele vereisten,beschreven in het SRS %Opgelegd door prof
+\item Het testen van de functionele vereisten,beschreven in het SRS %Opgelegd door prof
 \item Controleren van de gebruikers vereisten %Opgelegd door team
 \item Verzekering van code kwaliteit
-\item Unit testen en verwijderen van bugs 
+\item Unit testen en verwijderen van bugs
 
 \end{enumerate}
 
 \subsection{Doel}
-Het doel van dit document is om een overzicht te geven van alle strategieën, procedures, activiteiten en taken die instaan voor het testen van het project. Het document volgt de IEEE standaard voor Software en Systeem Test Documentatie.\footnote{\url{http://standards.ieee.org/findstds/standard/829-2008.html}} 
+Het doel van dit document is om een overzicht te geven van alle strategieën, procedures, activiteiten en taken die instaan voor het testen van het project. Het document volgt de IEEE standaard voor Software en Systeem Test Documentatie.\footnote{\url{http://standards.ieee.org/findstds/standard/829-2008.html}}
 
 \subsection{Objectieven}
 
@@ -73,9 +71,9 @@ Het doel van dit document is om een overzicht te geven van alle strategieën, pr
 Software projecten bestaan uit verschillende onderdelen: software, hardware en interfaces. De testing procedures verder beschreven in dit document behandelen elk onderdeel met variërende mate.
 
 \begin{description}
-\item[Software] De geïmplementeerde software is de basis van het project en wordt dus met bijhorende itensiteit getest. Hierdoor wordt een aanzienlijk deel van de tijd gespendeerd aan het testen van de code.
+\item[Software] De geïmplementeerde software is de basis van het project en wordt dus met bijhorende intensiteit getest. Hierdoor wordt een aanzienlijk deel van de tijd gespendeerd aan het testen van de code.
 
-\item[Hardware] Het systeem draait op twee verschillende types hardware. Het client gedeelte werkt op het apparaat van de gebruiker en is dus buiten het bereik van de tester van het systeem. De server waarop het systeem draait is nogmaals niet in het bezit van het team en is dus geen verantwoordelijkheid voor de tester.
+\item[Hardware] Het systeem draait op twee verschillende types hardware. Het cliënt gedeelte werkt op het apparaat van de gebruiker en is dus buiten het bereik van de tester van het systeem. De server waarop het systeem draait is nogmaals niet in het bezit van het team en is dus geen verantwoordelijkheid voor de tester.
 
 \item[Interface] De functionaliteit van de interface wordt door zowel test manager als webmaster getest.
 
@@ -84,15 +82,15 @@ Software projecten bestaan uit verschillende onderdelen: software, hardware en i
 De test procedures zorgen ervoor dat in het systeem:
 
 \begin{enumerate}
-\item De functionele verseisten vervuld zijn.
-\item De gebruikers het systeem correct en zoals beoogd kunnen gebruiken. 
-	  Dit houdt in dat de voorgeschreven use-cases op een correcte manier door de applicatie worden afgehandeld.
+\item De functionele vereisten vervult zijn.
+\item De gebruikers het systeem correct en zoals beoogd kunnen gebruiken.
+Dit houdt in dat de voorgeschreven use-cases op een correcte manier door de applicatie worden afgehandeld.
 
 \end{enumerate}
 
 \subsubsection{Secundair objectief}
 
-Het secundair objectief in het testen van een systeem is het opsporen en behandelen van alle problemen en risico's, deze problemen delen met het team achter het project en het oplossen van deze problemen op een correcte manier. 
+Het secundair objectief in het testen van een systeem is het opsporen en behandelen van alle problemen en risico's, deze problemen delen met het team achter het project en het oplossen van deze problemen op een correcte manier.
 
 Hierbij ligt de nadruk op het efficiënt en correct communiceren van problemen tussen leden van het team. Dit document beschrijft alle tools en platformen die gebruikt worden om problemen te melden en op te lossen.
 
@@ -102,7 +100,6 @@ Hierbij ligt de nadruk op het efficiënt en correct communiceren van problemen t
 \item Software Configuration Managment Plan
 \item Software Design Document
 \end{itemize}
-
 
 \section{Definities, acroniemen en afkortingen}
 \label{sec:definitions}
@@ -122,65 +119,67 @@ Hierbij ligt de nadruk op het efficiënt en correct communiceren van problemen t
 
 \begin{description}
 
-\item[Integriteit niveau] is een indicatie van de relatieve belangerijkheid van een software onderdeel tot de stakeholders of opdrachtgevers.
-\item[Unit test] methode om softwaremodulen of stukken broncode (units) afzonderlijk te testen.
+\item[Integriteit niveau] is een indicatie van de relatieve belangrijkheid van een software onderdeel tot de stakeholders of opdrachtgevers.
+\item[Unit test] methode om software modulen of stukken broncode (units) afzonderlijk te testen.
 \item [Integratie test] fase waarin individuele software modules gecombineerd worden en getest worden als een groep.
 
 \item [Traceerbaarheidsmatrix] deze matrix koppelt de test-cases aan de correcte use-cases
 
-
 \end{description}
-
 
 \section{Integriteit niveau's}
 
-Elk onderdeel van het systeem heeft een bepaald integriteits niveau (zie definities in sectie~\ref{sec:definitions}). In geval van het falen van dit onderdeel zegt de integriteit in hoeverre dit het gehele systeem zal beïnvloeden en hoe belangerijk het oplossen van het probleem is. Hoe hoger het niveau, hoe meer tests zullen worden uitgevoerd.
+Elk onderdeel van het systeem heeft een bepaald integriteit niveau (zie definities in sectie~\ref{sec:definitions}). In geval van het falen van een onderdeel zegt de integriteit in hoeverre dit het gehele systeem zal beïnvloeden en hoe belangrijk het oplossen van het probleem is. Hoe hoger het niveau, hoe meer test zullen worden uitgevoerd.
 
-Er bestaan drie niveaus
+Er bestaan drie niveaus:
 
 \begin{enumerate}
 
 \item De functionele vereisten.(Hoge prioriteit)
 
-\item De gebruikers vereisten of use-cases. (Gemiddelde prioriteit) 
+\item De gebruikers vereisten of use-cases. (Gemiddelde prioriteit)
 
 \item Aanvullende functionaliteiten. (Lage prioriteit)
 
 \end{enumerate}
 
-De functionele vereisten hebben de hoogste graad van belangerijkheid aangezien zij opgelegd zijn door de opdrachtgevers. Deze functionaliteiten moeten aanwezig zijn in de applicatie en moeten feilloos werken.
-De gebruikers vereisten zijn de vereisten opgelegd door de ontwikkelaars en zijn afgeleid uit de functionele vereisten. Deze vereisten hebben een lager niveau aangezien ze niet noodzakelijk zijn voor de opdrachtgevers.
+De functionele vereisten hebben de hoogste graad van belangrijkheid aangezien zij opgelegd zijn door de opdrachtgevers. Deze functionaliteiten moeten aanwezig zijn in de applicatie en moeten feilloos werken.
+De gebruikers vereisten zijn opgelegd door de ontwikkelaars en zijn afgeleid uit de functionele vereisten. Deze vereisten bepalen op welke manier een functionele vereiste zal worden geïmplementeerd. De ontwikkelaars bespreken wat concreet moet bereikt worden door een functionele vereiste en beslissen dan wat de optimale implementatie zal zijn die functionaliteit ondersteund. Deze vereisten hebben een lager niveau aangezien ze niet noodzakelijk zijn voor de opdrachtgevers.
 De aanvullende functionaliteiten hebben de laagste graad aangezien zij weinig of geen belang hebben in het correct functioneren van de applicatie.
 
 \section{Test processen}
 
- Het Mocha \footnote{\url{http://mochajs.org/}} framework wordt gebruikt in combinatie met Should.js \footnote{\url{https://github.com/tj/should.js}} als algemeen testplatform.\newline
+Het Mocha \footnote{\url{http://mochajs.org/}} framework wordt gebruikt in combinatie met Should.js \footnote{\url{https://github.com/tj/should.js}} als algemeen test platform.\newline
 
-De intensiteitsgraad en strengheid in het uitvoeren en documenteren van test procedures is evenredig met het intergriteitsgraad. Hoe lager de graad, hoe lager de intensiteit en strengheid van de test procedures.\newline
+De intensiteitsgraad en strengheid in het uitvoeren en documenteren van test procedures is evenredig met het integriteit niveau. Hoe lager de graad, hoe lager de intensiteit en strengheid van de test procedures.\newline
 
 De test methodologie wordt besproken in het Quality Assurance onderdeel van het SPMP.
 
 \subsection{Unit testing, integratie testing en validatie testen}
 
+Alle unit en integratie tests worden ontworpen en uitgevoerd door de Test Manager. Bij het schrijven van de unit tests kunnen de teamleden het schrijven van de tests versnellen door bij de methodes en functies die zij implementeren, hun eigen tests te schrijven, alhoewel dit niet verplicht is.\newline
+
+
 \subsubsection{White-box tests}
 
-Zowel de unit tests als de integratie tests zijn white-box tests, zij worden geïmplementeerd met kennis van het gehele systeem. Zij testen de interne structuren en werking van het programma.\newline
+Zowel de unit tests als de integratie tests zijn white-box tests, zij worden geïplementeerd met kennis van het gehele systeem. Zij testen de interne structuren en werking van het programma.\newline
 
-De Should.js bibilitotheek wordt gebruikt bij de unit en intergratie tests van de geschreven code. 
+De Should.js biblitotheek wordt gebruikt bij de unit en integratie tests van de geschreven code.
 
 Het Mocha framework zorgt ervoor dat alle tests op een correcte manier worden uitgevoerd. Een simpel commando voert alle test uit die zich in de "tests" map bevinden. Deze map heeft een indeling gelijkaardig aan de structuur van de applicatie code.
 
+Alle unit en integratie tests bevinden zich op een testing branch van de GitHub van het project. Deze branch wordt up to date gehouden met de meest recente code.
 
 \subsubsection{Black-box tests}
 
-Onder de black-box tests vallen alle test procedures die geen kennis hebben van de interne werking van het systeem. Hun hoofddoel is het testen van de functionaliteiten. 
+Onder de black-box tests vallen alle test procedures die geen kennis hebben van de interne werking van het systeem. Hun hoofddoel is het testen van de functionaliteiten.
 Hieronder vallen:
 
 \begin{description}
 
 \item[Component interface tests] testen de handeling van data tussen verschillende modules van de applicatie
-\item[Systeem tests] verifiëren dat de applicatie voldoet aan de vereisten 
-\item[Acceptatie tests] worden uitgevoerd door de cliënt
+\item[Systeem tests] verifiëren dat de applicatie voldoet aan de vereisten
+\item[Acceptatie tests] worden uitgevoerd door de cliënt.
 
 \end{description}
 
@@ -188,94 +187,19 @@ Deze tests maken weinig of geen gebruik van test platformen, maar worden getest 
 
 \subsection{Test procedures}
 
-Unit tests vormen de basis van het gehele test proces en zullen dus blijvend worden uitgevoerd gedurende de ontwikkeling van het systeem. De eerste unit tests worden geschreven voordat het design, beschreven in het SDD, wordt geimplementeerd. Elke klasse beschreven in het SDD zal voor de
-beduidende methodes een test functie bevatten die de correcte werking van de methode zal verzekeren.\newline
+Unit tests vormen de basis van het gehele test proces en zullen dus blijvend worden uitgevoerd gedurende de ontwikkeling van het systeem. Dit betekent dat elke methode zijn unit test zal verkrijgen, en deze blijft bestaan tijdens het evolueren van de methode. Telkens wanneer een methode wordt gewijzigd zal de bijhorende test opnieuw worden uitgevoerd. Zo wordt de correcte werking van iedere methode verzekerd en kan men gemakkelijker achterhalen wat er fout loopt bij het falen van een integratie test.
+De eerste unit tests worden geschreven voordat het ontwerp, beschreven in het SDD, wordt geïmplementeerd. Elke klasse beschreven in het SDD zal voor de beduidende methodes een test functie bevatten die de correcte werking van de methode zal verzekeren.\newline
 
-Het schrijven van de tests gebeurd met de Should syntax en wordt geplaatst in de test directory. De tester kan de test manueel oproepen of kan gebruik maken van het Mocha framework om alle testen met een commando uit te voeren. Een derde methode van testen is wanneer code naar GitHub (zie SCMP) wordt geduwd. Hierbij wordt de correcte functie opgeroepen en zal afhankelijk van het resultaat van de test de code op GitHub staan.
+Het schrijven van de tests gebeurd met de Should syntax en wordt geplaatst in de test directory. De tester kan de test manueel oproepen of kan gebruik maken van het Mocha framework om alle testen met een commando uit te voeren. Een derde methode van testen is wanneer code naar GitHub (zie SCMP) wordt geduwd. Hierbij wordt de correcte functie opgeroepen en zal afhankelijk van het resultaat van de test de code op GitHub staan. Naast manuele uitvoering van de testen, zal ook bij elke commit op de test branch elke testfile worden uitgevoerd door het gebruikte build systeem (zie SCMP). \newline
 
-\subsection{Test Cases en traceerbaarheidsmatrix}
+Code die door de testen is gecontroleerd, en door de QA Manager is gevalideerd mag op de master branch worden gepusht. Dit is echter een lang proces en maakt dus gebruik van Git's pull request systeem \footnote{https://help.github.com/articles/using-pull-requests/}. \newline
 
-Dit deel van het test document beschrijft de test cases  behorend bij de use case beschreven in deel vier van het SDD. De test cases gebruiken dezelfde naam als de bijhorende use case.
+\subsubsection {Problemen in testing}
 
-\subsubsection{Test Cases}
+In het geval van een ontbrekende test, zal beslist worden wat er moet gebeuren afhankelijk van het type van de ontbrekende test. In het geval van een unit test zal de Test Manager ofwel de taak op zich nemen om de test zo snel mogelijk te implementeren, ofwel wordt er beslist dat de persoon die de methode heeft geschreven zelf verantwoordelijk is voor het schrijven van de test.\newline
 
-Definitie : Het systeem : het testing framework
+In geval van een ontbrekende integratie test zal de Test manager gecontacteerd worden en is deze verplicht zo snel mogelijk de test te schrijven, zodat de implementatie van bijhorende modules zo kort mogelijk moet worden stil gelegd.\newline
 
-\begin{longtable}{lp{10cm}}
-Naam           & Account aanmaken.\\
-Samenvatting   & De gebruiker maakt een nieuw account aan.\\
-Tests   & 
-
-\begin{description}
-
-\item[Test 1] Het systeem gebruikt een willekeurig e-mailadres uit de database om een nieuw account aan te maken. De test moet terug geven dat het account niet is aangemaakt.
-\item [Test 2] Het systeem maakt een account met een uniek email adres maar met naam en voornaam aanwezig in de database. De test moet een lijst terug geven met correcte naam/voornaam combinatie.
-\item [Test 3] Het systeem maakt een compleet uniek account aan. De database wordt gecontroleerd om de nieuwe gebruiker, alle informatie moet overeen stemmen met de ingevulde gegevens.
-
-\end{description}
-
-\end{longtable}
-
-\begin{longtable}{lp{10cm}}
-Naam           & Inloggen.\\
-Samenvatting   & Een gebruiker logt zich in.\\
-Tests   & 
-
-\begin{description}
-
-\item[Test 1] Het systeem gebruikt een verkeerd e-mailadres om zich aan te melden. De test moet terug geven dat inloggen niet mogelijk is.
-\item [Test 2] Het systeem gebruikt een correct e-mailadres en een fout wachtwoord. De test moet terug geven dat inloggen niet mogelijk is.
-\item [Test 3] Het systeem logt in met correcte gegevens uit de database. Een correct RegisterdUser (zie SDD) object wordt aangemaakt.
-
-\end{description}
-
-\end{longtable}
-
-\begin{longtable}{lp{10cm}}
-Naam           & Publicatie uploaden.\\
-Samenvatting   & Een gebruiker zet zijn publicatie online.\\
-Tests   & 
-
-\begin{description}
-
-\item[Test 1] Het systeem probeert zowel een pdf als een bibtex bestand te uploaden, van het bestand zijn enkele publicatie velden gekend. De test kijkt of de velden correct worden aangevuld met de informatie uit de bestanden.
-\item [Test 2] Na een ingevuld publicatie formulier, eenderzijds door het systeem via analyse van een bestand anderzijds manueel door het systeem (aparte test) kijkt de test of de publicatie aanwezig is in de database.
-
-\end{description}
-
-\end{longtable}
-
-\begin{longtable}{lp{10cm}}
-Naam           & Publicatie opzoeken.\\
-Samenvatting   & De gebruiker zoekt publicaties op volgens bepaalde criteria.\\
-Tests   & 
-
-\begin{description}
-
-\item[Test 1] Fase 1: Het systeem zoekt publicaties met enkele willekeurige criteria. De test controleerd of er publicaties worden terruggeven.\newline
-			  Fase 2: Indien er publicaties werden teruggegeven worden deze gecontroleerd of ze bij de ingegeven criteria horen.
-
-\end{description}
-
-\end{longtable}
-
-\begin{longtable}{lp{10cm}}
-Naam           & Publicatie toevoegen aan gebruiker zijn bibliotheek.\\
-Samenvatting   & De gebruiker moet een publicatie die hij gevonden heeft met het systeem kunnen 				 toevoegen aan zijn eigen bibliotheek.\\
-Tests   & 
-
-\begin{description}
-
-\item[Test 1] Het systeem meldt zich aan met correcte gegevens van het test account. Een willekeurige publicatie wordt opgezocht en toegevoegt. Zowel de database als het account worden gecontroleerd of de nieuwe publicatie is toegevoegd.
-
-\end{description}
-
-\end{longtable}
-
-\subsubsection{Traceerbaarheidsmatrix}
-
-De matrix zal uitgewerkt worden in verdere iteraties van het document. Er bestaan nog niet voldoende test cases om de matrix op te stellen en de tests aan de functionaliteiten te koppelen.
-
-
+Als een test faalt wordt de implementatie van de methode gecontroleerd op correctheid, dit aangezien dit de functie van de test is. Indien de methode volgens de implementator correct is, zal de Test Manager de test controleren en indien nodig aanpassen. Dit kan gebeuren wanneer de interface van een methode wordt gewijzigd.
 
 \end{document}
